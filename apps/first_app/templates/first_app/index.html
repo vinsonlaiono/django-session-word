@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Title</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'first_app/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form_box">
+            <p style="color: red"></p>
+            <form action="/process" method="POST">
+                {% csrf_token %}
+                <h1>Add a new word</h1>
+                <input type="text" name="word">
+                <h4>Choose a word</h4>
+                <input type="radio" name="color" value="red" checked>Red
+                <input type="radio" name="color" value="blue" >Blue
+                <input type="radio" name="color" value="green" >Green
+                <input type="checkbox" name="font_size"> Show in BIG fonts!
+                <input type="submit" value="Add to session" class="add_btn">
+            </form>
+        </div>
+        <div class="results">
+            <a href="/reset"><input type="submit" value="Clear Session" style="display:block"></a>
+            {% for word in newword %}
+                {% autoescape off %}
+                    {{ word }} 
+                {%endautoescape%}
+            {% endfor %}
+        </div> 
+    </div>
+    
+</body>
+</html>

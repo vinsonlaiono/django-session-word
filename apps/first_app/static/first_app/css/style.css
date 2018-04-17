@@ -1,0 +1,41 @@
+.form_box,
+.results{
+    display: inline-block;
+    vertical-align: top;
+}
+.results{
+    width: 220px;
+}
+.form_box{
+    border: 1px solid black;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+}
+.add_btn,
+.color{
+    display: block;
+}
+.red{
+    color: red;
+    display: inline-block;
+}
+.redbig{
+    font-weight: bold;
+    color: red;
+    display: inline-block;
+}
+.bluebig{
+    font-weight: bold;
+    color: blue;
+}
+.blue{
+    color: blue;
+}
+.greenbig{
+    font-weight: bold;
+    color: green;
+}
+.green{
+    color: green;
+}
